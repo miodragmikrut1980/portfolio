@@ -1,0 +1,49 @@
+# Tests
+
+## Test 1 - Otvaranje kontakta i priprema upita [sanity]
+Viewport: desktop
+Covers: primary conversion workflow, contact modal, form submission
+Description: Verifies that a visitor can start and complete a project inquiry.
+
+Steps:
+1. Click “Zatraži ponudu”
+2. Fill in name, business, service, and project description
+3. Click “Pripremi e-mail upit”
+
+Expected: The contact form opens, accepts the information, and launches an e-mail draft with the submitted project details.
+
+## Test 2 - Pregled izdvojenih radova
+Viewport: desktop
+Covers: portfolio navigation, project presentation, services discovery
+Description: Verifies that a prospective client can inspect the work and understand the offer.
+
+Steps:
+1. Click “Radovi” in the navigation
+2. Review the Termino, Sportić, Čuvalica, and TeamOps AI cards
+3. Continue to the services section
+
+Expected: All four projects are visible with clear descriptions and the four service types are presented.
+
+## Test 3 - Zatvaranje kontaktnog prozora
+Viewport: desktop
+Covers: modal dismissal, keyboard accessibility
+Description: Verifies that the contact dialog can be safely dismissed.
+
+Steps:
+1. Open the contact dialog
+2. Press the Escape key
+3. Review the page
+
+Expected: The dialog closes and the portfolio page remains usable.
+
+## Test 4 - Mobilni poziv na akciju
+Viewport: mobile
+Covers: responsive layout, mobile navigation, mobile contact workflow
+Description: Verifies that a visitor on a phone can reach the contact form without layout obstruction.
+
+Steps:
+1. Open the page on mobile
+2. Tap “Zatraži ponudu” in the header
+3. Scroll through and interact with the contact form
+
+Expected: The site fits the viewport, the project cards stack vertically, and the contact form remains fully usable.

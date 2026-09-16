@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MM Studio — moderni sajtovi za vaš biznis</title>
+    <meta
+      name="description"
+      content="MM Studio — izrada modernih, brzih i mobile-first sajtova i web aplikacija za male biznise. Od ideje do gotovog sajta, bez komplikovanja."
+    />
+    <meta name="theme-color" content="#f5f3ee" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
@@ -12,17 +23,35 @@
         <a class="brand" href="#top"><span>MM</span> Studio</a>
         <nav>
           <a href="#radovi">Radovi</a><a href="#usluge">Usluge</a
-          ><a href="#proces">Proces</a>
+          ><a href="#proces">Proces</a><a href="#faq">Pitanja</a>
         </nav>
-        <button class="navCta open-contact">Zatraži ponudu</button>
+        <div class="navRight">
+          <button class="navCta open-contact">Zatraži ponudu</button>
+          <button class="burger" aria-label="Meni" aria-expanded="false">
+            <i></i><i></i><i></i>
+          </button>
+        </div>
       </header>
+      <div class="mobileMenu" aria-label="Mobilni meni">
+        <a href="#radovi"><small>01</small>Radovi</a>
+        <a href="#usluge"><small>02</small>Usluge</a>
+        <a href="#proces"><small>03</small>Proces</a>
+        <a href="#faq"><small>04</small>Pitanja</a>
+        <button class="primary open-contact">Zatraži ponudu ↗</button>
+      </div>
       <main id="top">
         <section class="hero">
           <div class="heroCopy">
             <div class="eyebrow"><i></i> Dostupan za nove projekte</div>
             <h1>
-              Sajtovi koji izgledaju ozbiljno.<br /><em
-                >I donose više upita.</em
+              <span class="w"><span>Sajtovi</span></span>
+              <span class="w"><span>koji</span></span>
+              <span class="w"><span>izgledaju</span></span>
+              <span class="w"><span>ozbiljno.</span></span><br />
+              <em
+                ><span class="w"><span>I&nbsp;donose</span></span>
+                <span class="w"><span>više</span></span>
+                <span class="w"><span>upita.</span></span></em
               >
             </h1>
             <p>
@@ -32,7 +61,7 @@
             <div class="heroActions">
               <button class="primary open-contact">
                 Razgovarajmo o vašem sajtu <b>↗</b></button
-              ><a class="secondary" href="#radovi">Pogledaj radove ↓</a>
+              ><a class="secondary" href="#radovi">Pogledaj radove <b>↓</b></a>
             </div>
             <div class="trust">
               <span><b>10+</b> digitalnih projekata</span
@@ -60,17 +89,16 @@
                 <div class="mockCards"><i></i><i></i><i></i></div>
               </div>
             </div>
-            <div class="badge badge1">⚡ Brzo učitavanje</div>
-            <div class="badge badge2">✓ Prilagođen mobilnom</div>
+            <div class="badge badge1"><i data-lucide="zap"></i> Brzo učitavanje</div>
+            <div class="badge badge2"><i data-lucide="smartphone"></i> Prilagođen mobilnom</div>
+            <div class="badge badge3"><i data-lucide="shield-check"></i> Bezbedan i stabilan</div>
           </div>
         </section>
-        <section class="strip">
-          <span>STRATEGIJA</span><i>✦</i><span>WEB DIZAJN</span><i>✦</i
-          ><span>IZRADA</span><i>✦</i><span>MOBILNA OPTIMIZACIJA</span><i>✦</i
-          ><span>PODRŠKA</span>
+        <section class="strip" aria-hidden="true">
+          <div class="marquee"><span>STRATEGIJA</span><span>WEB DIZAJN</span><span>IZRADA</span><span>MOBILNA OPTIMIZACIJA</span><span>PODRŠKA</span><span>SEO OSNOVE</span><span>BRZO UČITAVANJE</span><span>ODRŽAVANJE</span><span>STRATEGIJA</span><span>WEB DIZAJN</span><span>IZRADA</span><span>MOBILNA OPTIMIZACIJA</span><span>PODRŠKA</span><span>SEO OSNOVE</span><span>BRZO UČITAVANJE</span><span>ODRŽAVANJE</span></div>
         </section>
         <section id="radovi" class="section work">
-          <div class="sectionHead">
+          <div class="sectionHead reveal">
             <div>
               <small>IZDVOJENI RADOVI</small>
               <h2>Projekti iza kojih stojim.</h2>
@@ -81,7 +109,7 @@
             </p>
           </div>
           <div class="projects">
-            <article class="project wide purple">
+            <article class="project wide purple reveal">
               <div class="projectInfo">
                 <span class="tag">SALON SaaS</span>
                 <h3>Termino</h3>
@@ -93,7 +121,7 @@
                   <span>Rezervacije 24/7</span><span>Mobile-first</span
                   ><span>Poklon vaučeri</span>
                 </div>
-                <a href="#kontakt" class="projectLink">Pogledaj projekat ↗</a>
+                <a href="#kontakt" class="projectLink">Pogledaj projekat <b>↗</b></a>
               </div>
               <div class="projectScreen salon">
                 <div class="miniLogo">termino.</div>
@@ -106,7 +134,7 @@
                 </div>
               </div>
             </article>
-            <article class="project dark">
+            <article class="project dark reveal">
               <div class="projectInfo">
                 <span class="tag">DEČJI SPORT</span>
                 <h3>Sportić</h3>
@@ -126,7 +154,7 @@
                 </div>
               </div>
             </article>
-            <article class="project cream">
+            <article class="project cream reveal" data-delay="1">
               <div class="projectInfo">
                 <span class="tag">MARKETPLACE</span>
                 <h3>Čuvalica</h3>
@@ -134,7 +162,7 @@
                   Platforma koja povezuje roditelje sa pouzdanim dadiljama, uz
                   fokus na sigurnost i poverenje.
                 </p>
-                <a href="#kontakt" class="projectLink">Pogledaj projekat ↗</a>
+                <a href="#kontakt" class="projectLink">Pogledaj projekat <b>↗</b></a>
               </div>
               <div class="projectScreen care">
                 <div class="avatars"><i>JM</i><i>AK</i><i>MN</i></div>
@@ -142,7 +170,7 @@
                 ><span>Provereni profili • Sigurna rezervacija</span>
               </div>
             </article>
-            <article class="project wide blue">
+            <article class="project wide blue reveal">
               <div class="projectInfo">
                 <span class="tag">B2B SaaS</span>
                 <h3>TeamOps AI</h3>
@@ -154,7 +182,7 @@
                   <span>Rasporedi</span><span>AI preporuke</span
                   ><span>Analitika</span>
                 </div>
-                <a href="#kontakt" class="projectLink">Pogledaj projekat ↗</a>
+                <a href="#kontakt" class="projectLink">Pogledaj projekat <b>↗</b></a>
               </div>
               <div class="projectScreen dashboard">
                 <div class="dashNav">
@@ -174,54 +202,87 @@
             </article>
           </div>
         </section>
+        <section class="numbers">
+          <div class="reveal"><b><span data-count="10">0</span><i>+</i></b><span>realizovanih digitalnih projekata</span></div>
+          <div class="reveal" data-delay="1"><b><span data-count="100">0</span><i>%</i></b><span>sajtova prilagođeno mobilnom</span></div>
+          <div class="reveal" data-delay="2"><b><span data-count="4">0</span></b><span>koraka od ideje do objave</span></div>
+          <div class="reveal" data-delay="3"><b><i>1</i> osoba</b><span>direktan kontakt, bez posrednika</span></div>
+        </section>
         <section id="usluge" class="section services">
-          <div class="sectionHead">
+          <div class="sectionHead reveal">
             <div>
               <small>ŠTA DOBIJATE</small>
               <h2>Sve što je potrebno za ozbiljan nastup.</h2>
             </div>
           </div>
           <div class="serviceGrid">
-            <article>
+            <article class="reveal" data-delay="1">
               <b>01</b>
-              <div class="icon">✦</div>
+              <div class="icon"><i data-lucide="globe"></i></div>
               <h3>Poslovni sajt</h3>
               <p>
                 Jasna prezentacija koja gradi poverenje i pretvara posetioce u
                 nove klijente.
               </p>
+              <span>Zatraži ponudu →</span>
             </article>
-            <article>
+            <article class="reveal" data-delay="2">
               <b>02</b>
-              <div class="icon">▣</div>
+              <div class="icon"><i data-lucide="rocket"></i></div>
               <h3>Landing stranica</h3>
               <p>
                 Fokusirana stranica za konkretnu uslugu, kampanju ili
                 prikupljanje upita.
               </p>
+              <span>Zatraži ponudu →</span>
             </article>
-            <article>
+            <article class="reveal" data-delay="3">
               <b>03</b>
-              <div class="icon">⌁</div>
+              <div class="icon"><i data-lucide="refresh-cw"></i></div>
               <h3>Redizajn sajta</h3>
               <p>
                 Svež izgled, bolja organizacija i prijatnije iskustvo na svakom
                 uređaju.
               </p>
+              <span>Zatraži ponudu →</span>
             </article>
-            <article>
+            <article class="reveal" data-delay="4">
               <b>04</b>
-              <div class="icon">⚡</div>
+              <div class="icon"><i data-lucide="layout-dashboard"></i></div>
               <h3>Web aplikacija</h3>
               <p>
                 Praktičan digitalni alat napravljen oko stvarnog načina rada
                 vašeg biznisa.
               </p>
+              <span>Zatraži ponudu →</span>
+            </article>
+          </div>
+        </section>
+        <section class="section why">
+          <div class="whyIntro reveal">
+            <small>ZAŠTO MM STUDIO</small>
+            <h2>Sajt koji radi, <em>a ne samo postoji.</em></h2>
+          </div>
+          <div class="whyGrid">
+            <article class="reveal">
+              <div class="icon"><i data-lucide="gauge"></i></div>
+              <h3>Brzina na prvom mestu</h3>
+              <p>Lagan kod bez suvišnih dodataka — sajt se učitava brzo i na slabijoj mobilnoj mreži, što Google nagrađuje boljim rangom.</p>
+            </article>
+            <article class="reveal" data-delay="1">
+              <div class="icon"><i data-lucide="message-circle"></i></div>
+              <h3>Jedna osoba, jasna komunikacija</h3>
+              <p>Razgovarate direktno sa onim ko pravi vaš sajt. Bez agencijskih slojeva, bez tehničkog žargona, bez čekanja na odgovor.</p>
+            </article>
+            <article class="reveal" data-delay="2">
+              <div class="icon"><i data-lucide="handshake"></i></div>
+              <h3>Podrška i posle objave</h3>
+              <p>Sajt nije gotov kad ode online. Tu sam za izmene, dopune i savete kako da od sajta izvučete više upita.</p>
             </article>
           </div>
         </section>
         <section id="proces" class="section process">
-          <div class="processIntro">
+          <div class="processIntro reveal">
             <small>KAKO RADIMO</small>
             <h2>Od ideje do gotovog sajta,<br /><em>bez komplikovanja.</em></h2>
             <p>
@@ -230,30 +291,30 @@
             </p>
             <button class="primary open-contact">Započnimo razgovor ↗</button>
           </div>
-          <div class="steps">
-            <article>
-              <b>01</b>
+          <div class="steps reveal" data-delay="1">
+            <article class="reveal" data-delay="5">
+              <b>05</b>
               <div>
                 <h3>Kratak razgovor</h3>
                 <p>Upoznajem vaš biznis, ciljeve i kupce.</p>
               </div>
             </article>
-            <article>
-              <b>02</b>
+            <article class="reveal" data-delay="6">
+              <b>06</b>
               <div>
                 <h3>Predlog i struktura</h3>
                 <p>Dobijate jasan plan sadržaja i izgleda.</p>
               </div>
             </article>
-            <article>
-              <b>03</b>
+            <article class="reveal" data-delay="7">
+              <b>07</b>
               <div>
                 <h3>Dizajn i izrada</h3>
                 <p>Pratim dogovoreni pravac i redovno šaljem napredak.</p>
               </div>
             </article>
-            <article>
-              <b>04</b>
+            <article class="reveal" data-delay="8">
+              <b>08</b>
               <div>
                 <h3>Objava i podrška</h3>
                 <p>Sajt ide online, a vi dobijate pomoć i nakon lansiranja.</p>
@@ -261,9 +322,38 @@
             </article>
           </div>
         </section>
+        <section id="faq" class="section faq">
+          <div class="faqIntro reveal">
+            <small>ČESTA PITANJA</small>
+            <h2>Ono što vas <em>verovatno zanima.</em></h2>
+            <p>Ako ne nađete odgovor ovde, pošaljite upit — odgovaram na sve poruke, bez obaveze.</p>
+          </div>
+          <div class="faqList reveal" data-delay="1">
+            <details open>
+              <summary>Koliko traje izrada sajta? <i>+</i></summary>
+              <p>Zavisi od obima. Jednostavan prezentacioni sajt ili landing stranica obično bude gotov za nekoliko nedelja, a složenije web aplikacije planiramo zajedno u fazama. Konkretan rok dobijate uz predlog, pre nego što bilo šta počne.</p>
+            </details>
+            <details>
+              <summary>Šta mi je potrebno da bismo počeli? <i>+</i></summary>
+              <p>Samo kratak opis čime se bavite i šta želite da postignete. Tekstove, fotografije i logo možemo pripremiti zajedno usput — ne morate ništa imati unapred.</p>
+            </details>
+            <details>
+              <summary>Da li sajt radi dobro na telefonu? <i>+</i></summary>
+              <p>Da — svaki sajt pravim mobile-first, jer većina vaših klijenata dolazi upravo sa telefona. Proveravam ga na različitim veličinama ekrana pre objave.</p>
+            </details>
+            <details>
+              <summary>Šta se dešava nakon objave sajta? <i>+</i></summary>
+              <p>Dobijate pomoć oko domena i hostinga, kratko uputstvo i podršku za izmene. Ako želite, možemo dogovoriti i redovno održavanje.</p>
+            </details>
+            <details>
+              <summary>Mogu li kasnije sam menjati sadržaj? <i>+</i></summary>
+              <p>Naravno. U zavisnosti od projekta, ili dobijate jednostavan način da sami uređujete tekst i slike, ili mi javite izmene i ja ih unesem.</p>
+            </details>
+          </div>
+        </section>
         <section id="kontakt" class="cta">
-          <small>IMATE IDEJU?</small>
-          <h2>Hajde da napravimo sajt<br />koji radi za vaš biznis.</h2>
+          <small class="reveal">IMATE IDEJU?</small>
+          <h2 class="reveal">Hajde da napravimo sajt<br />koji radi za vaš biznis.</h2>
           <p>
             Opišite ukratko šta vam je potrebno. Odgovoriću sa jasnim predlogom
             sledećih koraka.
@@ -275,14 +365,31 @@
         </section>
       </main>
       <footer>
-        <a class="brand" href="#top"><span>MM</span> Studio</a>
-        <p>Moderni sajtovi za ambiciozne male biznise.</p>
         <div>
-          <a href="#radovi">Radovi</a><a href="#usluge">Usluge</a
-          ><a href="#kontakt">Kontakt</a>
+          <a class="brand" href="#top"><span>MM</span> Studio</a>
+          <p>Moderni, brzi i jednostavni sajtovi za ambiciozne male biznise — od ideje do objave, bez komplikovanja.</p>
         </div>
-        <small>© 2026 MM Studio</small>
+        <div>
+          <b>SAJT</b>
+          <a href="#radovi">Radovi</a><a href="#usluge">Usluge</a
+          ><a href="#proces">Proces</a><a href="#faq">Pitanja</a>
+        </div>
+        <div>
+          <b>USLUGE</b>
+          <a href="#usluge">Poslovni sajt</a><a href="#usluge">Landing stranica</a
+          ><a href="#usluge">Redizajn</a><a href="#usluge">Web aplikacija</a>
+        </div>
+        <div>
+          <b>KONTAKT</b>
+          <a href="#kontakt" class="open-contact">Pošaljite upit ↗</a>
+          <small>Odgovor u najkraćem roku</small>
+        </div>
+        <div class="footBottom">
+          <small>© 2026 MM Studio. Sva prava zadržana.</small>
+          <small>Dizajn i izrada: MM Studio</small>
+        </div>
       </footer>
+      <button class="toTop" aria-label="Na vrh"><i data-lucide="arrow-up"></i></button>
       <div class="modal" id="contactModal" aria-hidden="true">
         <div class="modalCard">
           <button class="close" aria-label="Zatvori">×</button

@@ -1,4 +1,4 @@
-# MM Studio Portfolio
+# Devlab Portfolio
 
 Portfolio sajt za predstavljanje završenih web projekata i usluga izrade sajtova.
 

@@ -356,10 +356,12 @@ body.menuOpen .mobileMenu {
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
+  padding: 0.04em 0.1em 0.16em;
+  margin: -0.04em -0.1em -0.16em;
 }
 .hero h1 .w > span {
   display: inline-block;
-  transform: translateY(110%);
+  transform: translateY(140%);
   animation: rise 1s var(--ease) forwards;
 }
 h1 em,

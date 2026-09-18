@@ -275,7 +275,7 @@ body.menuOpen .mobileMenu {
   height: 60vw;
   max-width: 820px;
   max-height: 820px;
-  background: radial-gradient(circle at center, #ff5b3533, transparent 60%);
+  background: radial-gradient(circle at center, #ff5b351f, transparent 62%);
   filter: blur(40px);
   z-index: -1;
   animation: drift 14s ease-in-out infinite alternate;
@@ -285,7 +285,7 @@ body.menuOpen .mobileMenu {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: radial-gradient(#17171714 1px, transparent 1px);
+  background-image: radial-gradient(#1717170d 1px, transparent 1px);
   background-size: 26px 26px;
   mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%);
@@ -375,8 +375,11 @@ h1 em,
   color: var(--orange);
 }
 h1 em {
+  font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 1.1em;
+  letter-spacing: -1px;
   color: var(--orange);
 }
 @keyframes rise {
@@ -445,64 +448,34 @@ h1 em {
   min-height: 520px;
   perspective: 1200px;
 }
-.orbit {
-  position: absolute;
-  border: 1px dashed #cfc9bd;
-  border-radius: 50%;
-}
-.o1 {
-  width: 640px;
-  height: 640px;
-  animation: spin 80s linear infinite;
-}
-.o2 {
-  width: 480px;
-  height: 480px;
-  border-style: solid;
-  animation: spin 50s linear infinite reverse;
-}
-.orbit::before {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--orange);
-  top: -6px;
-  left: 50%;
-  box-shadow: 0 0 0 6px #ff5b3522;
-}
-.o2::before {
-  background: var(--ink);
-  box-shadow: 0 0 0 6px #17171718;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 .browser {
-  width: min(570px, 85%);
-  height: 390px;
+  width: min(620px, 92%);
+  height: 404px;
   background: #fff;
-  border: 7px solid #171717;
-  border-radius: 12px;
+  border: 1px solid #ded9cf;
+  border-radius: 14px;
   box-shadow:
-    25px 28px 0 #d6d2c9,
-    0 40px 80px -30px #0005;
-  transform: rotate(2deg);
+    0 1px 1px #17171708,
+    0 8px 18px -8px #1717170f,
+    0 34px 60px -28px #17171733;
+  transform: rotate(0deg);
   z-index: 1;
   overflow: hidden;
   transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
   will-change: transform;
 }
 .heroVisual:hover .browser {
-  transform: rotate(0deg) translateY(-6px);
+  transform: translateY(-5px);
+  box-shadow:
+    0 1px 1px #17171708,
+    0 12px 24px -10px #17171714,
+    0 44px 74px -30px #1717173d;
 }
 .browserTop {
-  height: 31px;
-  background: #171717;
-  color: #aaa;
+  height: 34px;
+  background: #f1eee7;
+  border-bottom: 1px solid #e4dfd4;
+  color: #8d887e;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -512,62 +485,21 @@ h1 em {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ff5f57;
+  background: #d8d3c8;
 }
 .browserTop i:nth-child(2) {
-  background: #febc2e;
+  background: #ded9cf;
 }
 .browserTop i:nth-child(3) {
-  background: #28c840;
+  background: #e4dfd5;
 }
 .browserTop small {
   margin: auto;
-  font-size: 9px;
-  background: #ffffff14;
+  font-size: 9.5px;
+  background: #ffffffcc;
+  border: 1px solid #e4dfd4;
   padding: 3px 30px;
   border-radius: 4px;
-}
-.badge {
-  position: absolute;
-  background: #fff;
-  padding: 13px 17px;
-  border-radius: 8px;
-  box-shadow: 0 16px 40px -10px #746f6455;
-  font-weight: 700;
-  font-size: 12px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  animation: float 6s ease-in-out infinite;
-}
-.badge svg {
-  width: 16px;
-  height: 16px;
-  color: var(--orange);
-}
-.badge1 {
-  top: 60px;
-  right: 1%;
-}
-.badge2 {
-  bottom: 55px;
-  left: 1%;
-  animation-delay: -3s;
-}
-.badge3 {
-  top: 45%;
-  right: -2%;
-  animation-delay: -1.5s;
-}
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
 }
 
 /* ---------- marquee strip ---------- */
@@ -1551,17 +1483,10 @@ footer a:hover {
   .browser {
     height: 285px;
     width: 94%;
-    box-shadow: 12px 14px 0 #d6d2c9;
-  }
-  .mockHero {
-    padding: 26px 10px 14px;
-  }
-  .mockHero strong {
-    font-size: 23px;
-  }
-  .badge,
-  .orbit {
-    display: none;
+    box-shadow:
+      0 1px 1px #17171708,
+      0 6px 14px -6px #1717170f,
+      0 22px 40px -22px #1717172e;
   }
   .section {
     padding: 75px 20px;
@@ -1642,7 +1567,7 @@ footer a:hover {
 .browser .browserShot {
   display: block;
   width: 100%;
-  height: calc(100% - 31px);
+  height: calc(100% - 34px);
   object-fit: cover;
   object-position: top center;
   background: var(--paper-2);
@@ -1794,4 +1719,36 @@ footer a:hover {
     padding: 8px 14px;
     font-size: 13px;
   }
+}
+
+/* ---------- mirna oznaka ispod prikaza ---------- */
+.shotCaption {
+  margin-top: 22px;
+  font: 700 11px Manrope, sans-serif;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.shotCaption span {
+  font-weight: 600;
+  color: #9a948a;
+  letter-spacing: 1.2px;
+}
+.heroVisual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- finiji red sa dokazima ---------- */
+.trust {
+  gap: 34px;
+}
+.trust span {
+  padding-left: 15px;
+  border-left: 1px solid var(--line);
+}
+.trust b {
+  font-size: 19px;
 }

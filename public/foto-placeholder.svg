@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#ece9df"/>
-  <circle cx="100" cy="100" r="94" fill="none" stroke="#c6c0b4" stroke-width="2" stroke-dasharray="7 7"/>
-  <circle cx="100" cy="72" r="23" fill="#c6c0b4"/>
-  <path d="M60 134a40 40 0 0 1 80 0z" fill="#c6c0b4"/>
-  <text x="100" y="160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
-        font-size="11" font-weight="bold" fill="#8d887e" letter-spacing="0.5">TVOJA FOTOGRAFIJA</text>
-</svg>

@@ -439,7 +439,20 @@
           <button class="ctaButton open-contact">
             Pošaljite upit <b>↗</b>
           </button>
-          <div class="ctaNote">Bez obaveze • Odgovor u najkraćem roku</div>
+          <div class="ctaWays">
+            <a
+              class="way"
+              href="https://wa.me/381601234567?text=Zdravo,%20video%20sam%20sajt%20Devlab%20i%20zanima%20me%20izrada%20sajta."
+              target="_blank"
+              rel="noopener"
+              ><i data-lucide="message-circle"></i> Pišite na WhatsApp</a
+            ><a class="way" href="viber://chat?number=%2B381601234567"
+              ><i data-lucide="message-circle"></i> Pišite na Viber</a
+            ><a class="way ghost" href="mailto:miodrag.mikrut@gmail.com">miodrag.mikrut@gmail.com</a>
+          </div>
+          <div class="ctaNote">
+            Bez obaveze • Viber i WhatsApp samo za poruke, bez poziva
+          </div>
         </section>
       </main>
       <footer>
@@ -460,7 +473,10 @@
         <div>
           <b>KONTAKT</b>
           <a href="#kontakt" class="open-contact">Pošaljite upit ↗</a>
-          <small>Odgovor u najkraćem roku</small>
+          <a href="https://wa.me/381601234567" target="_blank" rel="noopener">WhatsApp poruka</a>
+          <a href="viber://chat?number=%2B381601234567">Viber poruka</a>
+          <a href="mailto:miodrag.mikrut@gmail.com">miodrag.mikrut@gmail.com</a>
+          <small>Poruke, bez poziva • odgovor u najkraćem roku</small>
         </div>
         <div class="footBottom">
           <small>© 2026 Devlab. Sva prava zadržana.</small>
@@ -477,7 +493,7 @@
             Popunite kratku poruku. Otvoriće se vaš e-mail program sa spremnim
             upitom.
           </p>
-          <form id="contactForm">
+          <form id="contactForm" data-to="miodrag.mikrut@gmail.com">
             <label
               >Ime i prezime<input
                 name="name"

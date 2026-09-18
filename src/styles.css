@@ -259,10 +259,10 @@ body.menuOpen .mobileMenu {
 
 /* ---------- hero ---------- */
 .hero {
-  min-height: 720px;
+  min-height: 660px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 80px max(5vw, 28px) 70px;
+  padding: 44px max(5vw, 28px) 64px;
   overflow: hidden;
   position: relative;
   isolation: isolate;
@@ -317,7 +317,7 @@ body.menuOpen .mobileMenu {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 27px;
+  margin-bottom: 22px;
   padding: 8px 14px 8px 10px;
   border: 1px solid var(--line);
   border-radius: 40px;
@@ -423,7 +423,7 @@ h1 em {
 .trust {
   display: flex;
   gap: 30px;
-  margin-top: 52px;
+  margin-top: 38px;
   color: #716e68;
   font-size: 12px;
 }
@@ -526,60 +526,6 @@ h1 em {
   background: #ffffff14;
   padding: 3px 30px;
   border-radius: 4px;
-}
-.mock {
-  padding: 18px;
-  background: var(--paper-2);
-  height: 100%;
-}
-.mockNav {
-  display: flex;
-  justify-content: space-between;
-  font-size: 9px;
-}
-.mockHero {
-  padding: 45px 20px 28px;
-}
-.mockHero small {
-  color: #e94f2e;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-.mockHero strong {
-  font: 800 33px Manrope, sans-serif;
-  display: block;
-  margin: 10px 0;
-  letter-spacing: -1px;
-}
-.mockHero span {
-  display: block;
-  width: 80px;
-  height: 5px;
-  background: var(--orange);
-  margin-bottom: 18px;
-}
-
-.mockHero button {
-  border: 0;
-  background: #171717;
-  color: #fff;
-  padding: 9px 13px;
-  font-size: 9px;
-  border-radius: 3px;
-}
-.mockCards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-.mockCards i {
-  height: 58px;
-  background: #d1cdc1;
-  border-radius: 4px;
-}
-.mockCards i:nth-child(2) {
-  background: #c8ff65;
 }
 .badge {
   position: absolute;
@@ -1689,5 +1635,192 @@ footer a:hover {
   }
   .modal h2 {
     font-size: 30px;
+  }
+}
+
+/* ---------- pravi snimak u hero okviru ---------- */
+.browser .browserShot {
+  display: block;
+  width: 100%;
+  height: calc(100% - 31px);
+  object-fit: cover;
+  object-position: top center;
+  background: var(--paper-2);
+}
+.shotTag {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 3;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 40px;
+  padding: 8px 16px;
+  font-size: 11.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  box-shadow: 0 12px 30px -14px #746f6455;
+}
+.shotTag b {
+  color: var(--ink);
+}
+
+/* ---------- ko stoji iza + izjava ---------- */
+.intro {
+  padding: 96px max(5vw, 28px) 60px;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.introPerson {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.introPhoto {
+  flex: none;
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+.introPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.introText small {
+  font: 700 12px Manrope, sans-serif;
+  letter-spacing: 1.8px;
+  color: var(--muted);
+}
+.introText h2 {
+  font: 800 clamp(26px, 2.6vw, 34px) Manrope, sans-serif;
+  letter-spacing: -1px;
+  margin: 10px 0 12px;
+}
+.introText p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 520px;
+}
+.introMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.introMeta span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 40px;
+  background: #ffffff99;
+}
+.quote {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px 30px 26px;
+  position: relative;
+}
+.quote::before {
+  content: '“';
+  position: absolute;
+  top: 2px;
+  left: 22px;
+  font: 800 62px Manrope, sans-serif;
+  color: var(--orange);
+  opacity: 0.35;
+}
+.quote blockquote {
+  margin: 18px 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.quote figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.quote figcaption b {
+  font: 700 14px Manrope, sans-serif;
+  color: var(--ink);
+}
+
+/* ---------- klijenti ---------- */
+.clients {
+  padding: 0 max(5vw, 28px) 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.clients small {
+  font: 700 12px Manrope, sans-serif;
+  letter-spacing: 1.8px;
+  color: var(--muted);
+  flex: none;
+}
+.clientRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.clientRow span {
+  font: 700 15px Manrope, sans-serif;
+  padding: 10px 18px;
+}
+
+/* ---------- prazna polja koja treba popuniti ---------- */
+.ph {
+  color: #a49f95;
+  border: 1px dashed #c6c0b4;
+  border-radius: 6px;
+  padding: 2px 7px;
+  display: inline-block;
+  background: #ffffff80;
+}
+
+@media (max-width: 1100px) {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-top: 74px;
+  }
+}
+@media (max-width: 700px) {
+  .introPerson {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .introPhoto {
+    width: 120px;
+    height: 120px;
+  }
+  .shotTag {
+    display: none;
+  }
+  .clients {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .clientRow span {
+    padding: 8px 14px;
+    font-size: 13px;
   }
 }

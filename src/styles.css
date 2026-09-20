@@ -849,6 +849,82 @@ h1 em {
 .mini:hover .miniShot.plain img {
   transform: scale(1.04);
 }
+.miniShot.dual {
+  position: relative;
+  padding: 16px 16px 0;
+}
+.miniShot.dual .miniFrame {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px #0005;
+  transition: transform 0.9s var(--ease);
+}
+.mini:hover .miniShot.dual .miniFrame {
+  transform: translate(-4px, -4px);
+}
+.miniFrameTop {
+  height: 16px;
+  background: #ecebe6;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  border-bottom: 1px solid #ddd;
+}
+.miniFrameTop i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+.miniFrameTop i:nth-child(2) {
+  background: #febc2e;
+}
+.miniFrameTop i:nth-child(3) {
+  background: #28c840;
+}
+.miniShot.dual .miniFrame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9.6;
+  object-fit: cover;
+  object-position: top;
+}
+.miniShot.dual .miniPhone {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  width: 26%;
+  max-width: 92px;
+  min-width: 56px;
+  border: 3px solid #171717;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #171717;
+  box-shadow: 0 16px 30px -14px #0009;
+  transition: transform 0.9s var(--ease);
+  z-index: 2;
+}
+.mini:hover .miniShot.dual .miniPhone {
+  transform: translateY(-5px);
+}
+.miniShot.dual .miniPhone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 390 / 844;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 9px;
+}
+.mini.span2 .miniShot.dual .miniPhone {
+  width: 15%;
+  max-width: 92px;
+}
 .miniBody {
   padding: 24px 24px 26px;
   display: flex;

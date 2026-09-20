@@ -893,14 +893,18 @@ h1 em {
   aspect-ratio: 16 / 9.6;
   object-fit: cover;
   object-position: top;
+  border-radius: 0;
+  box-shadow: none;
+}
+.mini:hover .miniShot.dual .miniFrame img,
+.mini:hover .miniShot.dual .miniPhone img {
+  transform: none;
 }
 .miniShot.dual .miniPhone {
   position: absolute;
   right: 8px;
   bottom: 0;
-  width: 26%;
-  max-width: 92px;
-  min-width: 56px;
+  width: 92px;
   border: 3px solid #171717;
   border-radius: 13px;
   overflow: hidden;
@@ -922,8 +926,7 @@ h1 em {
   border-radius: 9px;
 }
 .mini.span2 .miniShot.dual .miniPhone {
-  width: 15%;
-  max-width: 92px;
+  width: 84px;
 }
 .miniBody {
   padding: 24px 24px 26px;

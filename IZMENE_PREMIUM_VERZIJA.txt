@@ -1,0 +1,26 @@
+DEVLAB PORTFOLIO — PREMIUM REVIZIJA
+
+Urađeno:
+- nova početna poruka koja jasno obuhvata sajtove i web aplikacije;
+- dodata tri konkretna elementa sigurnosti odmah uz glavni poziv na akciju;
+- dodata sekcija o Miodragu Mikrutu kao osnivaču i odgovornoj osobi;
+- uklonjeni svi placeholder klijenti, izmišljena izjava i probni broj telefona;
+- dodata traka sa jasnim obavezama tokom saradnje;
+- transparentno označeni projekti u pilot, alpha ili razvojnoj fazi;
+- uz glavne projekte objašnjena poslovna vrednost;
+- ostali radovi preciznije nazvani proizvodima i prototipovima;
+- usluge pretvorene u jasnije pakete sa konkretnim stavkama;
+- proces proširen na šest faza koje smanjuju rizik klijenta;
+- kontakt uprošćen na proverenu e-mail adresu;
+- upit dopunjen okvirnim budžetom i željenim rokom;
+- smirena pokretna animacija;
+- dodati responsive stilovi za nove premium sekcije;
+- ažurirani title, description i social metadata tekstovi;
+- potvrđen uspešan produkcioni build.
+
+Podaci koje je kasnije moguće dodati bez redizajna:
+- profesionalna fotografija Miodraga;
+- potvrđen WhatsApp/Viber broj;
+- stvarne izjave klijenata uz dozvolu;
+- javni linkovi ka završenim projektima;
+- serversko slanje formulara bez otvaranja e-mail aplikacije.

@@ -65,6 +65,10 @@ document.querySelector('#contactForm')?.addEventListener('submit', event => {
       form.get('business') +
       '\nUsluga: ' +
       form.get('service') +
+      '\nOkvir ulaganja: ' +
+      form.get('budget') +
+      '\nŽeljeni rok: ' +
+      form.get('timeline') +
       '\n\nO projektu:\n' +
       form.get('message')
   );

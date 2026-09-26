@@ -2086,3 +2086,24 @@ footer .footContact {
     justify-content: center;
   }
 }
+
+/* ---------- laptop / tablet položen (901–1259px): hero u jednoj koloni ----------
+   U dve kolone desna strana (min. 520px) sabija tekst, pa se naslov lomi
+   na 1–2 reči po redu, a glavno dugme ide u 2–3 reda. */
+@media (min-width: 901px) and (max-width: 1259px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 55px;
+  }
+  .heroCopy {
+    max-width: 760px;
+  }
+  .heroVisual {
+    min-height: 470px;
+    width: min(820px, 100%);
+    justify-self: center;
+  }
+  .trust {
+    flex-wrap: wrap;
+  }
+}

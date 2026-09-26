@@ -12,6 +12,7 @@ import {
   Gauge,
   Handshake,
   ArrowUp,
+  Search,
 } from 'lucide';
 
 createIcons({
@@ -27,6 +28,7 @@ createIcons({
     Gauge,
     Handshake,
     ArrowUp,
+    Search,
   },
 });
 
@@ -97,15 +99,31 @@ document.addEventListener('keydown', event => {
   }
 });
 
-/* ---------- sticky nav + back to top ---------- */
+/* ---------- sticky nav + back to top + traka napretka ---------- */
 const nav = document.querySelector('.nav');
 const toTop = document.querySelector('.toTop');
+const root = document.documentElement;
+let lastY = window.scrollY;
+let scrollRaf = 0;
 const onScroll = () => {
+  scrollRaf = 0;
   const y = window.scrollY;
   nav?.classList.toggle('scrolled', y > 20);
   toTop?.classList.toggle('show', y > 700);
+  // navigacija se sklanja pri skrolu nadole, vraća pri skrolu nagore
+  if (y > lastY + 6 && y > 480) nav?.classList.add('hidden');
+  else if (y < lastY - 6 || y < 480) nav?.classList.remove('hidden');
+  lastY = y;
+  const max = root.scrollHeight - window.innerHeight;
+  root.style.setProperty('--read', (max > 0 ? Math.min(1, y / max) : 0).toFixed(4));
 };
-window.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener(
+  'scroll',
+  () => {
+    if (!scrollRaf) scrollRaf = requestAnimationFrame(onScroll);
+  },
+  { passive: true }
+);
 onScroll();
 toTop?.addEventListener('click', () =>
   window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -144,7 +162,48 @@ const revealObserver = new IntersectionObserver(
   },
   { threshold: 0.12 }
 );
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+/* naslovi sekcija ulaze reč po reč (čuva <em>, <br>) */
+const splitWords = (el: HTMLElement) => {
+  let i = 0;
+  const walk = (node: Node) => {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === Node.TEXT_NODE) {
+        const frag = document.createDocumentFragment();
+        (n.textContent || '').split(/([ \t\n]+)/).forEach(part => {
+          if (!part) return;
+          if (/^[ \t\n]+$/.test(part)) return void frag.append(' ');
+          const w = document.createElement('span');
+          w.className = 'sw';
+          const inner = document.createElement('span');
+          inner.textContent = part;
+          inner.style.setProperty('--i', String(i++));
+          w.append(inner);
+          frag.append(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === Node.ELEMENT_NODE && (n as Element).tagName !== 'BR') walk(n);
+    });
+  };
+  walk(el);
+  el.classList.add('split');
+};
+document
+  .querySelectorAll<HTMLElement>('main h2:not(.modal h2)')
+  .forEach(h => {
+    splitWords(h);
+    revealObserver.observe(h);
+  });
+
+/* animacije kreću tek kad su fontovi spremni — nema skoka pri zameni fonta */
+const ready = () => {
+  if (root.classList.contains('is-ready')) return;
+  root.classList.add('is-ready');
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+};
+Promise.race([
+  document.fonts ? document.fonts.ready : Promise.resolve(),
+  new Promise(r => setTimeout(r, 800)),
+]).then(ready);
 
 /* ---------- count-up numbers ---------- */
 const countObserver = new IntersectionObserver(
@@ -178,6 +237,31 @@ if (h1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   h1.querySelectorAll('.w > span').forEach(span => {
     (span as HTMLElement).style.animationDelay = `${0.08 * i++ + 0.1}s`;
   });
+}
+
+/* ---------- blaga paralaksa hero vizuala pri skrolu ---------- */
+const heroEl = document.querySelector<HTMLElement>('.hero');
+const phone = document.querySelector<HTMLElement>('.heroPhone');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (heroEl && !reduceMotion) {
+  let heroVisible = true;
+  let pRaf = 0;
+  const parallax = () => {
+    pRaf = 0;
+    if (!heroVisible) return;
+    const y = Math.min(window.scrollY, 900);
+    const b = document.querySelector<HTMLElement>('.browser');
+    if (b) b.style.translate = `0 ${(y * -0.06).toFixed(1)}px`;
+    if (phone) phone.style.translate = `0 ${(y * -0.16).toFixed(1)}px`;
+  };
+  new IntersectionObserver(([e]) => (heroVisible = e.isIntersecting)).observe(heroEl);
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!pRaf) pRaf = requestAnimationFrame(parallax);
+    },
+    { passive: true }
+  );
 }
 
 /* ---------- hero browser tilt ---------- */

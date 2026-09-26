@@ -1,3 +1,8 @@
+/* fontovi sa sopstvenog servera — bez blokirajućeg zahteva ka Google-u */
+import '@fontsource-variable/dm-sans/wght.css';
+import '@fontsource-variable/manrope/wght.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '@fontsource/instrument-serif/latin-ext-400-italic.css';
 import './styles.css';
 import {
   createIcons,
@@ -32,20 +37,26 @@ createIcons({
   },
 });
 
-/* ---------- contact modal ---------- */
-const modal = document.querySelector<HTMLElement>('#contactModal');
-const openModal = () => {
+/* ---------- contact modal (pravi <dialog>: fokus ostaje unutra, Esc zatvara) ---------- */
+const modal = document.querySelector<HTMLDialogElement>('#contactModal');
+let opener: HTMLElement | null = null;
+const openModal = (e: Event) => {
+  opener = e.currentTarget as HTMLElement;
   closeMenu();
-  modal?.classList.add('show');
-  modal?.setAttribute('aria-hidden', 'false');
+  if (!modal) return;
+  modal.showModal();
   document.body.style.overflow = 'hidden';
-  modal?.querySelector<HTMLInputElement>('input')?.focus();
+  requestAnimationFrame(() => modal.classList.add('show'));
+  modal.querySelector<HTMLInputElement>('input')?.focus();
 };
 const closeModal = () => {
-  modal?.classList.remove('show');
-  modal?.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
+  if (modal?.open) modal.close();
 };
+modal?.addEventListener('close', () => {
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+  opener?.focus();
+});
 document
   .querySelectorAll('.open-contact')
   .forEach(button => button.addEventListener('click', openModal));
@@ -246,10 +257,12 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (heroEl && !reduceMotion) {
   let heroVisible = true;
   let pRaf = 0;
+  const wide = matchMedia('(min-width: 901px)');
   const parallax = () => {
     pRaf = 0;
     if (!heroVisible) return;
-    const y = Math.min(window.scrollY, 900);
+    // na telefonu i tabletu bez paralakse — raspored je drugačiji
+    const y = wide.matches ? Math.min(window.scrollY, 900) : 0;
     const b = document.querySelector<HTMLElement>('.browser');
     if (b) b.style.translate = `0 ${(y * -0.06).toFixed(1)}px`;
     if (phone) phone.style.translate = `0 ${(y * -0.16).toFixed(1)}px`;

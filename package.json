@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
     "lucide": "^0.469.0"
   },
   "optionalDependencies": {

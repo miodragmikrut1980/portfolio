@@ -11,7 +11,7 @@
   --orange-2: #2d747a;
   --lime: #dce9e7;
   --line: #d4d9d5;
-  --muted: #6a716e;
+  --muted: #555c59; /* AA: ≥4.6:1 na svim svetlim pozadinama */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 * {
@@ -25,7 +25,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -45,10 +45,10 @@ img {
 /* skriveno samo kada JS radi (klasa .js se dodaje u <head>) — bez JS-a sve je vidljivo */
 .js .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(16px);
   transition:
-    opacity 0.9s var(--ease),
-    transform 1.1s var(--ease);
+    opacity 1s var(--ease),
+    transform 1.2s var(--ease);
 }
 .reveal.in {
   opacity: 1;
@@ -96,7 +96,7 @@ img {
   gap: 10px;
   color: var(--ink);
   text-decoration: none;
-  font: 800 19px Manrope, sans-serif;
+  font: 800 19px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -0.3px;
 }
 .brand .brandMark {
@@ -237,7 +237,7 @@ body.menuOpen .mobileMenu {
 .mobileMenu a {
   color: #fff;
   text-decoration: none;
-  font: 800 clamp(38px, 10vw, 54px) Manrope, sans-serif;
+  font: 800 clamp(38px, 10vw, 54px) 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -2px;
   padding: 6px 0;
   border-bottom: 1px solid #ffffff1a;
@@ -246,7 +246,7 @@ body.menuOpen .mobileMenu {
   align-items: center;
 }
 .mobileMenu a small {
-  font: 700 12px Manrope;
+  font: 700 12px 'Manrope Variable', Manrope;
   letter-spacing: 2px;
   color: var(--orange);
 }
@@ -312,7 +312,7 @@ body.menuOpen .mobileMenu {
 .modalCard > small,
 .faqIntro > small,
 .whyIntro small {
-  font: 700 12px Manrope, sans-serif;
+  font: 700 12px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 1.8px;
 }
 .eyebrow {
@@ -347,7 +347,7 @@ body.menuOpen .mobileMenu {
 .section h2,
 .cta h2,
 .modal h2 {
-  font-family: Manrope, sans-serif;
+  font-family: 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -3px;
   line-height: 1.02;
   margin: 0;
@@ -455,12 +455,12 @@ h1 em {
   border-radius: 50%;
   background: var(--lime);
   color: var(--orange);
-  font: 800 13px Manrope, sans-serif;
+  font: 800 13px 'Manrope Variable', Manrope, sans-serif;
 }
 .trust b {
   display: block;
   color: var(--ink);
-  font: 800 15px Manrope, sans-serif;
+  font: 800 15px 'Manrope Variable', Manrope, sans-serif;
   margin-bottom: 4px;
   letter-spacing: -0.5px;
 }
@@ -478,7 +478,7 @@ h1 em {
 }
 .founderPromise small {
   color: var(--orange);
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px 'Manrope Variable', Manrope, sans-serif;
 }
 .heroVisual {
   position: relative;
@@ -522,7 +522,7 @@ h1 em {
   border: 1px solid var(--line);
   border-radius: 50%;
   background: #f4f1eae8;
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px 'Manrope Variable', Manrope, sans-serif;
 }
 .heroProcess span:first-child b {
   background: var(--lime);
@@ -530,7 +530,7 @@ h1 em {
   color: var(--orange);
 }
 .heroProcess small {
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px 'Manrope Variable', Manrope, sans-serif;
 }
 .qualityPill {
   position: absolute;
@@ -547,7 +547,7 @@ h1 em {
   box-shadow: 0 14px 30px -24px #15191880;
   backdrop-filter: blur(10px);
   color: var(--orange);
-  font: 700 10px Manrope, sans-serif;
+  font: 700 10px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 1.1px;
   text-transform: uppercase;
 }
@@ -663,7 +663,7 @@ h1 em {
 }
 .heroQuality b {
   color: var(--ink-2);
-  font: 600 14px Manrope, sans-serif;
+  font: 600 14px 'Manrope Variable', Manrope, sans-serif;
 }
 
 /* ---------- marquee strip ---------- */
@@ -674,7 +674,7 @@ h1 em {
   display: flex;
   align-items: center;
   overflow: hidden;
-  font: 700 12px Manrope, sans-serif;
+  font: 700 12px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 2px;
   white-space: nowrap;
 }
@@ -773,21 +773,19 @@ h1 em {
   min-height: 480px;
 }
 .purple {
-  background: linear-gradient(135deg, #403a75, #2c2757);
+  background: linear-gradient(160deg, #1d403f, #122827);
   color: white;
 }
 .dark {
   background: linear-gradient(160deg, #1d403f, #122827);
   color: white;
 }
-.cream {
-  background: linear-gradient(160deg, #eedfcc, #e2d2bd);
-}
+.cream,
 .blue {
-  background: linear-gradient(135deg, #dde6f3, #cfdbec);
+  background: linear-gradient(160deg, #ece7dd, #e2dbcf);
 }
 .tag {
-  font: 700 10px Manrope, sans-serif;
+  font: 700 10px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 1.2px;
   padding: 7px 11px;
   border: 1px solid currentColor;
@@ -795,7 +793,7 @@ h1 em {
   display: inline-block;
 }
 .project h3 {
-  font: 800 40px Manrope, sans-serif;
+  font: 800 40px 'Manrope Variable', Manrope, sans-serif;
   margin: 25px 0 12px;
   letter-spacing: -1.5px;
 }
@@ -942,7 +940,7 @@ h1 em {
   gap: 40px;
 }
 .moreHead h3 {
-  font: 800 clamp(28px, 3vw, 38px) Manrope, sans-serif;
+  font: 800 clamp(28px, 3vw, 38px) 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -1.5px;
   margin: 0;
 }
@@ -1103,7 +1101,7 @@ h1 em {
   font-size: 9px;
 }
 .miniBody h4 {
-  font: 800 22px Manrope, sans-serif;
+  font: 800 22px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -0.7px;
   margin: 16px 0 8px;
 }
@@ -1149,7 +1147,7 @@ h1 em {
 }
 .numbers b {
   display: block;
-  font: 800 clamp(42px, 4.5vw, 64px) Manrope, sans-serif;
+  font: 800 clamp(42px, 4.5vw, 64px) 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -2px;
   line-height: 1;
 }
@@ -1202,8 +1200,8 @@ h1 em {
   transform: scaleX(1);
 }
 .serviceGrid article > b {
-  color: #aaa;
-  font: 700 11px Manrope, sans-serif;
+  color: var(--muted);
+  font: 700 11px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 1px;
 }
 .icon {
@@ -1227,7 +1225,7 @@ h1 em {
   transform: rotate(-8deg) scale(1.08);
 }
 .serviceGrid h3 {
-  font: 800 21px Manrope, sans-serif;
+  font: 800 21px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -0.5px;
   margin: 0 0 10px;
 }
@@ -1297,7 +1295,7 @@ h1 em {
   color: #fff;
 }
 .whyGrid h3 {
-  font: 800 20px Manrope, sans-serif;
+  font: 800 20px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -0.5px;
   margin: 0 0 10px;
 }
@@ -1336,7 +1334,7 @@ h1 em {
   padding-left: 10px;
 }
 .steps article > b {
-  font: 800 13px Manrope, sans-serif;
+  font: 800 13px 'Manrope Variable', Manrope, sans-serif;
   color: var(--orange);
   width: 34px;
   height: 34px;
@@ -1352,7 +1350,7 @@ h1 em {
 }
 .steps h3 {
   margin: 4px 0 8px;
-  font: 800 20px Manrope, sans-serif;
+  font: 800 20px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -0.5px;
 }
 .steps p {
@@ -1385,7 +1383,7 @@ h1 em {
   list-style: none;
   cursor: pointer;
   padding: 22px 0;
-  font: 700 18px Manrope, sans-serif;
+  font: 700 18px 'Manrope Variable', Manrope, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1399,7 +1397,8 @@ h1 em {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid var(--line);
+  border: 1px solid #8a918d; /* ikonica/okvir ≥3:1 */
+  color: var(--ink);
   display: grid;
   place-items: center;
   font-style: normal;
@@ -1494,9 +1493,9 @@ footer > div {
   gap: 12px;
 }
 footer > div b {
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 1.6px;
-  color: #a19c93;
+  color: var(--muted);
   margin-bottom: 4px;
 }
 footer a:hover {
@@ -1911,12 +1910,12 @@ footer a:hover {
   align-items: center;
 }
 .introText small {
-  font: 700 12px Manrope, sans-serif;
+  font: 700 12px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 1.8px;
   color: var(--muted);
 }
 .introText h2 {
-  font: 800 clamp(26px, 2.6vw, 34px) Manrope, sans-serif;
+  font: 800 clamp(26px, 2.6vw, 34px) 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: -1px;
   margin: 10px 0 12px;
 }
@@ -1960,10 +1959,10 @@ footer a:hover {
   display: grid;
   place-items: center;
   background: var(--orange);
-  font: 800 21px Manrope, sans-serif;
+  font: 800 21px 'Manrope Variable', Manrope, sans-serif;
 }
-.founderCard small { color: var(--orange-2); letter-spacing: 1.4px; font-weight: 700; }
-.founderCard h3 { margin: 8px 0 9px; font: 800 20px Manrope, sans-serif; }
+.founderCard small { color: #8fc5c7; letter-spacing: 1.4px; font-weight: 700; }
+.founderCard h3 { margin: 8px 0 9px; font: 800 20px 'Manrope Variable', Manrope, sans-serif; }
 .founderCard p { margin: 0; color: #ffffffb8; line-height: 1.6; font-size: 14px; }
 .assurance {
   margin: 0 max(5vw, 28px) 30px;
@@ -1974,7 +1973,7 @@ footer a:hover {
 }
 .assurance span {
   padding: 20px 18px;
-  font: 600 12px Manrope, sans-serif;
+  font: 600 12px 'Manrope Variable', Manrope, sans-serif;
   border-right: 1px solid var(--line);
 }
 .assurance span:last-child { border-right: 0; }
@@ -2009,14 +2008,14 @@ footer a:hover {
 /* ---------- mirna oznaka ispod prikaza ---------- */
 .shotCaption {
   margin-top: 22px;
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px 'Manrope Variable', Manrope, sans-serif;
   letter-spacing: 1.7px;
   text-transform: uppercase;
   color: var(--ink);
 }
 .shotCaption span {
   font-weight: 600;
-  color: #9a948a;
+  color: var(--muted);
   letter-spacing: 1.2px;
 }
 .heroVisual {
@@ -2056,7 +2055,7 @@ footer a:hover {
   border: 1px solid #ffffff;
   border-radius: 8px;
   padding: 11px 18px;
-  font: 700 13.5px Manrope, sans-serif;
+  font: 700 13.5px 'Manrope Variable', Manrope, sans-serif;
   text-decoration: none;
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
@@ -2314,4 +2313,163 @@ i[data-lucide] {
   .nav.hidden {
     transform: none;
   }
+}
+
+/* =====================================================================
+   $10K revizija: pristupačnost, dijalog, telefon
+   ===================================================================== */
+
+/* link za preskakanje na sadržaj (vidljiv samo na tastaturi) */
+.skip {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip:focus {
+  top: 16px;
+}
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* kontakt kao pravi <dialog> */
+dialog.modal {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  color: inherit;
+}
+dialog.modal:not([open]) {
+  display: none;
+}
+dialog.modal::backdrop {
+  background: transparent;
+}
+
+/* lepeza telefona: samo na telefonu */
+.heroFan {
+  display: none;
+}
+
+/* ---------- telefon: dizajniran, ne smanjen ---------- */
+@media (max-width: 560px) {
+  /* hero: pravi mobilni ekrani umesto smanjenog desktop snimka */
+  .heroVisual {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'proc'
+      'pill'
+      'stage'
+      'cap';
+    justify-items: center;
+    min-height: 0;
+  }
+  .heroProcess {
+    grid-area: proc;
+  }
+  .qualityPill {
+    grid-area: pill;
+    justify-self: end;
+  }
+  .browser {
+    display: none;
+  }
+  .heroPhone {
+    grid-area: stage;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    z-index: 3;
+    width: 48%;
+    margin-top: 26px;
+    border-width: 5px;
+    border-radius: 30px;
+    transform: none;
+  }
+  .heroFan {
+    display: contents;
+  }
+  .heroFan img {
+    grid-area: stage;
+    align-self: end;
+    width: 38%;
+    height: auto;
+    margin-bottom: 14px;
+    border: 4px solid var(--ink);
+    border-radius: 24px;
+    background: var(--ink);
+    box-shadow: 0 24px 40px -22px #0009;
+  }
+  .heroFan img:first-child {
+    justify-self: start;
+    margin-left: 4%;
+    rotate: -7deg;
+  }
+  .heroFan img:last-child {
+    justify-self: end;
+    margin-right: 4%;
+    rotate: 7deg;
+  }
+  .shotCaption {
+    grid-area: cap;
+  }
+
+  /* projekti: mobilna aplikacija u prvom planu, desktop u pozadini */
+  .project .shot {
+    position: relative;
+    height: 380px;
+    margin: 28px -26px -26px;
+    overflow: hidden;
+  }
+  .project .frame {
+    position: absolute;
+    left: -10%;
+    top: 26px;
+    width: 88%;
+    opacity: 0.5;
+    border-radius: 10px;
+  }
+  .project .phoneFrame {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 54%;
+    min-width: 0;
+    max-width: none;
+    margin: 0 auto;
+    border-width: 5px;
+    border-radius: 30px;
+  }
+  .miniShot.dual {
+    aspect-ratio: 4 / 3;
+  }
+  .miniShot.dual .miniFrame {
+    width: 86%;
+    opacity: 0.55;
+  }
+  .miniShot.dual .miniPhone,
+  .mini.span2 .miniShot.dual .miniPhone {
+    left: 34%;
+    right: auto;
+    bottom: -18%;
+    width: 36%;
+    border-radius: 18px;
+  }
+}
+
+/* podnaslov u heru je najveći element prvog ekrana (LCP) — prikazuje se odmah, bez čekanja animacije */
+.js .heroCopy > p {
+  animation: none;
 }

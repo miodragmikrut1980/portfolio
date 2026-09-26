@@ -30,13 +30,20 @@
     <meta name="twitter:title" content="Devlab — premium sajtovi i web aplikacije" />
     <meta name="twitter:description" content="Od ideje do pouzdanog digitalnog proizvoda — jasan proces, pažljiv dizajn i direktna saradnja." />
     <meta name="twitter:image" content="https://devlab.rs/og.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Devlab",
+        "url": "https://devlab.rs/",
+        "image": "https://devlab.rs/og.jpg",
+        "email": "miodrag.mikrut@gmail.com",
+        "founder": { "@type": "Person", "name": "Miodrag Mikrut" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Sombor", "addressCountry": "RS" },
+        "description": "Poslovni sajtovi i web aplikacije — jasan obim, pažljiv dizajn i podrška nakon objave."
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=Manrope:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./src/styles.css" />
     <script>
       /* animacije se uključuju odmah (bez treptaja); ako JS ne stigne za 4 s, sadržaj ostaje vidljiv */
@@ -49,6 +56,7 @@
     </script>
   </head>
   <body>
+    <a class="skip" href="#top">Preskoči na sadržaj</a>
     <div class="readBar" aria-hidden="true"></div>
     <div id="app">
       <header class="nav">
@@ -119,6 +127,8 @@
               <img
                 class="browserShot"
                 src="./projects/zakazi.webp"
+                srcset="./projects/zakazi-720.webp 720w, ./projects/zakazi.webp 1440w"
+                sizes="(max-width: 560px) 92vw, (max-width: 1259px) 80vw, 720px"
                 alt="Zakaži — aplikacija za zakazivanje termina u salonima"
                 width="1440"
                 height="900"
@@ -126,7 +136,11 @@
               />
             </div>
             <div class="heroPhone" aria-hidden="true">
-              <img src="./projects/zakazi-m.webp" alt="" width="390" height="844" />
+              <img src="./projects/zakazi-m.webp" srcset="./projects/zakazi-m-200.webp 200w, ./projects/zakazi-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="" width="390" height="844" />
+            </div>
+            <div class="heroFan" aria-hidden="true">
+              <img src="./projects/dosije-m-200.webp" srcset="./projects/dosije-m-200.webp 200w, ./projects/dosije-m.webp 390w" sizes="40vw" alt="" width="390" height="844" loading="lazy" decoding="async" />
+              <img src="./projects/teamops-m-200.webp" srcset="./projects/teamops-m-200.webp 200w, ./projects/teamops-m.webp 390w" sizes="40vw" alt="" width="390" height="844" loading="lazy" decoding="async" />
             </div>
             <figcaption class="shotCaption">
               Zakaži <span>— SaaS aplikacija za salone</span>
@@ -195,10 +209,10 @@
               <div class="shot">
                 <div class="frame">
                   <div class="frameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/zakazi.webp" alt="Zakaži — prikaz aplikacije" loading="lazy" width="1440" height="900" />
+                  <img src="./projects/zakazi.webp" srcset="./projects/zakazi-720.webp 720w, ./projects/zakazi.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="Zakaži — prikaz aplikacije" loading="lazy" width="1440" height="900" />
                 </div>
                 <div class="phoneFrame">
-                  <img src="./projects/zakazi-m.webp" alt="Zakaži — mobilni prikaz" loading="lazy" width="390" height="844" />
+                  <img src="./projects/zakazi-m.webp" srcset="./projects/zakazi-m-200.webp 200w, ./projects/zakazi-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="Zakaži — mobilni prikaz" loading="lazy" width="390" height="844" />
                 </div>
               </div>
             </article>
@@ -214,10 +228,10 @@
               <div class="shot">
                 <div class="frame">
                   <div class="frameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/apartmanos.webp" alt="ApartmanOS — prikaz aplikacije" loading="lazy" width="1440" height="900" />
+                  <img src="./projects/apartmanos.webp" srcset="./projects/apartmanos-720.webp 720w, ./projects/apartmanos.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="ApartmanOS — prikaz aplikacije" loading="lazy" width="1440" height="900" />
                 </div>
                 <div class="phoneFrame">
-                  <img src="./projects/apartmanos-m.webp" alt="ApartmanOS — mobilni prikaz" loading="lazy" width="390" height="844" />
+                  <img src="./projects/apartmanos-m.webp" srcset="./projects/apartmanos-m-200.webp 200w, ./projects/apartmanos-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="ApartmanOS — mobilni prikaz" loading="lazy" width="390" height="844" />
                 </div>
               </div>
             </article>
@@ -233,10 +247,10 @@
               <div class="shot">
                 <div class="frame">
                   <div class="frameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/dosije.webp" alt="Dosije AI — prikaz aplikacije" loading="lazy" width="1440" height="900" />
+                  <img src="./projects/dosije.webp" srcset="./projects/dosije-720.webp 720w, ./projects/dosije.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="Dosije AI — prikaz aplikacije" loading="lazy" width="1440" height="900" />
                 </div>
                 <div class="phoneFrame">
-                  <img src="./projects/dosije-m.webp" alt="Dosije AI — mobilni prikaz" loading="lazy" width="390" height="844" />
+                  <img src="./projects/dosije-m.webp" srcset="./projects/dosije-m-200.webp 200w, ./projects/dosije-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="Dosije AI — mobilni prikaz" loading="lazy" width="390" height="844" />
                 </div>
               </div>
             </article>
@@ -252,10 +266,10 @@
               <div class="shot">
                 <div class="frame">
                   <div class="frameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/teamops.webp" alt="TeamOps AI — prikaz aplikacije" loading="lazy" width="1440" height="900" />
+                  <img src="./projects/teamops.webp" srcset="./projects/teamops-720.webp 720w, ./projects/teamops.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="TeamOps AI — prikaz aplikacije" loading="lazy" width="1440" height="900" />
                 </div>
                 <div class="phoneFrame">
-                  <img src="./projects/teamops-m.webp" alt="TeamOps AI — mobilni prikaz" loading="lazy" width="390" height="844" />
+                  <img src="./projects/teamops-m.webp" srcset="./projects/teamops-m-200.webp 200w, ./projects/teamops-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="TeamOps AI — mobilni prikaz" loading="lazy" width="390" height="844" />
                 </div>
               </div>
             </article>
@@ -269,9 +283,9 @@
               <div class="miniShot dual">
                 <div class="miniFrame">
                   <div class="miniFrameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/cuvalica.webp" alt="Čuvalica — prikaz aplikacije" loading="lazy" />
+                  <img src="./projects/cuvalica.webp" srcset="./projects/cuvalica-720.webp 720w, ./projects/cuvalica.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="Čuvalica — prikaz aplikacije" loading="lazy" />
                 </div>
-                <div class="miniPhone"><img src="./projects/cuvalica-m.webp" alt="Čuvalica — mobilni prikaz" loading="lazy" /></div>
+                <div class="miniPhone"><img src="./projects/cuvalica-m.webp" srcset="./projects/cuvalica-m-200.webp 200w, ./projects/cuvalica-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="Čuvalica — mobilni prikaz" loading="lazy" /></div>
               </div>
               <div class="miniBody">
                 <span class="tag">MARKETPLACE</span>
@@ -284,9 +298,9 @@
               <div class="miniShot dual">
                 <div class="miniFrame">
                   <div class="miniFrameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/sportic.webp" alt="Sportić — prikaz sajta" loading="lazy" />
+                  <img src="./projects/sportic.webp" srcset="./projects/sportic-720.webp 720w, ./projects/sportic.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="Sportić — prikaz sajta" loading="lazy" />
                 </div>
-                <div class="miniPhone"><img src="./projects/sportic-m.webp" alt="Sportić — mobilni prikaz" loading="lazy" /></div>
+                <div class="miniPhone"><img src="./projects/sportic-m.webp" srcset="./projects/sportic-m-200.webp 200w, ./projects/sportic-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="Sportić — mobilni prikaz" loading="lazy" /></div>
               </div>
               <div class="miniBody">
                 <span class="tag">DEČJI SPORT</span>
@@ -299,9 +313,9 @@
               <div class="miniShot dual">
                 <div class="miniFrame">
                   <div class="miniFrameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/investos.webp" alt="InvestoOS — prikaz aplikacije" loading="lazy" />
+                  <img src="./projects/investos.webp" srcset="./projects/investos-720.webp 720w, ./projects/investos.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="InvestoOS — prikaz aplikacije" loading="lazy" />
                 </div>
-                <div class="miniPhone"><img src="./projects/investos-m.webp" alt="InvestoOS — mobilni prikaz" loading="lazy" /></div>
+                <div class="miniPhone"><img src="./projects/investos-m.webp" srcset="./projects/investos-m-200.webp 200w, ./projects/investos-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="InvestoOS — mobilni prikaz" loading="lazy" /></div>
               </div>
               <div class="miniBody">
                 <span class="tag">NEKRETNINE</span>
@@ -314,9 +328,9 @@
               <div class="miniShot dual">
                 <div class="miniFrame">
                   <div class="miniFrameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/ordinacija.webp" alt="AI asistent za ordinacije — prikaz aplikacije" loading="lazy" />
+                  <img src="./projects/ordinacija.webp" srcset="./projects/ordinacija-720.webp 720w, ./projects/ordinacija.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="AI asistent za ordinacije — prikaz aplikacije" loading="lazy" />
                 </div>
-                <div class="miniPhone"><img src="./projects/ordinacija-m.webp" alt="AI asistent za ordinacije — mobilni prikaz" loading="lazy" /></div>
+                <div class="miniPhone"><img src="./projects/ordinacija-m.webp" srcset="./projects/ordinacija-m-200.webp 200w, ./projects/ordinacija-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="AI asistent za ordinacije — mobilni prikaz" loading="lazy" /></div>
               </div>
               <div class="miniBody">
                 <span class="tag">ZDRAVSTVO</span>
@@ -329,9 +343,9 @@
               <div class="miniShot dual">
                 <div class="miniFrame">
                   <div class="miniFrameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/kombi.webp" alt="Kombi Dispečer — prikaz aplikacije" loading="lazy" />
+                  <img src="./projects/kombi.webp" srcset="./projects/kombi-720.webp 720w, ./projects/kombi.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="Kombi Dispečer — prikaz aplikacije" loading="lazy" />
                 </div>
-                <div class="miniPhone"><img src="./projects/kombi-m.webp" alt="Kombi Dispečer — mobilni prikaz" loading="lazy" /></div>
+                <div class="miniPhone"><img src="./projects/kombi-m.webp" srcset="./projects/kombi-m-200.webp 200w, ./projects/kombi-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="Kombi Dispečer — mobilni prikaz" loading="lazy" /></div>
               </div>
               <div class="miniBody">
                 <span class="tag">TRANSPORT</span>
@@ -344,9 +358,9 @@
               <div class="miniShot dual">
                 <div class="miniFrame">
                   <div class="miniFrameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/oglasi.webp" alt="Praćenje oglasa — prikaz aplikacije" loading="lazy" />
+                  <img src="./projects/oglasi.webp" srcset="./projects/oglasi-720.webp 720w, ./projects/oglasi.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="Praćenje oglasa — prikaz aplikacije" loading="lazy" />
                 </div>
-                <div class="miniPhone"><img src="./projects/oglasi-m.webp" alt="Praćenje oglasa — mobilni prikaz" loading="lazy" /></div>
+                <div class="miniPhone"><img src="./projects/oglasi-m.webp" srcset="./projects/oglasi-m-200.webp 200w, ./projects/oglasi-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="Praćenje oglasa — mobilni prikaz" loading="lazy" /></div>
               </div>
               <div class="miniBody">
                 <span class="tag">NEKRETNINE</span>
@@ -359,9 +373,9 @@
               <div class="miniShot dual">
                 <div class="miniFrame">
                   <div class="miniFrameTop"><i></i><i></i><i></i></div>
-                  <img src="./projects/budzet.webp" alt="Knjiga budžeta — prikaz aplikacije" loading="lazy" />
+                  <img src="./projects/budzet.webp" srcset="./projects/budzet-720.webp 720w, ./projects/budzet.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 80vw, 720px" alt="Knjiga budžeta — prikaz aplikacije" loading="lazy" />
                 </div>
-                <div class="miniPhone"><img src="./projects/budzet-m.webp" alt="Knjiga budžeta — mobilni prikaz" loading="lazy" /></div>
+                <div class="miniPhone"><img src="./projects/budzet-m.webp" srcset="./projects/budzet-m-200.webp 200w, ./projects/budzet-m.webp 390w" sizes="(max-width: 560px) 50vw, 170px" alt="Knjiga budžeta — mobilni prikaz" loading="lazy" /></div>
               </div>
               <div class="miniBody">
                 <span class="tag">LIČNE FINANSIJE</span>
@@ -569,11 +583,11 @@
         </div>
       </footer>
       <button class="toTop" aria-label="Na vrh"><i data-lucide="arrow-up"></i></button>
-      <div class="modal" id="contactModal" aria-hidden="true">
+      <dialog class="modal" id="contactModal" aria-labelledby="modalTitle">
         <div class="modalCard">
           <button class="close" aria-label="Zatvori">×</button
           ><small>NOVI PROJEKAT</small>
-          <h2>Recite mi nešto o vašoj ideji.</h2>
+          <h2 id="modalTitle">Recite mi nešto o vašoj ideji.</h2>
           <p>
             Popunite kratku poruku. Pripremićemo strukturisan upit u vašem e-mail
             programu, tako da odmah znamo najvažnije o projektu.
@@ -609,7 +623,7 @@
             </button>
           </form>
         </div>
-      </div>
+      </dialog>
     </div>
     <script type="module" src="./src/main.ts"></script>
   </body>
